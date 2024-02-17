@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <button @click="turnOvertext">{{message}}
+        </button>
+        <ul>
+            <li v-for="(element,index) in list" @click="deleteEl(index)">{{element}}</li>
+        </ul>
+        <button @click="addElement">Добавить элемент</button>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Перевернуть',
+                list: ['элемент 1', 'элемент 2', 'элемент 3', 'элемент 4']
+
+            },
+            methods: {
+                turnOvertext() {
+                    this.message = Array.from(this.message).reverse().join('');
+                    return this.message
+                },
+                addElement() {
+                    this.list.push('новый элемент списка')
+                },
+                deleteEl(index) {
+                    this.list.splice(index, 1)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
