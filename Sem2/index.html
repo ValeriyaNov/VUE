@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{product.name}}</h1>
+        <p>{{product.price}}</p>
+        <img :src='product.url' alt=""><button @click="changePrice">Скидка</button>
+        <ul>
+            <li v-for="user in users">{{user.name}} - {{user.age}}</li>
+        </ul>
+        <ul>
+            <li v-for="product in products">
+                <input type="number" v-model="product.quantity">
+                <input type="checkbox" :name="product.name" v-model="product.bought"><span>{{product.name}}    {{product.bought}}   {{product.quantity}}</span></li>
+        </ul>
+    </div>
+    <div id="app1">
+        <form @submit="addContact">
+            <label for="firstName">Имя:</label>
+            <input type="text" id="firstName" v-model="newContact.firstName">
+
+            <label for="lastName">Фамилия:</label>
+            <input type="text" id="lastName" v-model="newContact.lastName">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" v-model="newContact.email">
+
+            <button type="submit">Добавить контакт</button>
+        </form>
+
+        <ul>
+            <li v-for="contact in contacts" :key="contact.email">
+
+            </li>
+        </ul>
+    </div>
+    <script>
+        const app = new Vue({
+            el: ' #app ',
+            data: {
+                product: {
+                    name: 'Phone ',
+                    price: '100 ',
+                    url: '../project/img/blog1.png '
+                },
+                users: [{
+                    id: '1 ',
+                    name: 'Anna ',
+                    age: '27 '
+                }, {
+                    id: '2 ',
+                    name: 'Victor ',
+                    age: '25 '
+                }, {
+                    id: '3 ',
+                    name: 'Victor ',
+                    age: '45 '
+                }],
+                products: [{
+                    id: 1,
+                    name: 'Молоко ',
+                    quantity: 2,
+                    bought: false
+                }, {
+                    id: 2,
+                    name: 'Хлеб ',
+                    quantity: 1,
+                    bought: true
+                }, {
+                    id: 3,
+                    name: 'Яблоки ',
+                    quantity: 5,
+                    bought: false
+                }, {
+                    id: 4,
+                    name: 'Мясо ',
+                    quantity: 0,
+                    bought: false
+                }]
+
+            },
+            methods: {
+                changePrice() {
+                    let random = parseInt(Math.random() * 20);
+                    this.product.price = this.product.price - this.product.price * random / 100
+                }
+            }
+        });
+        const app2 = new Vue({
+            el: '#app2',
+            data: {
+                newContact: {
+                    firstName: '',
+                    lastName: '',
+                    email: ''
+                },
+                contacts: []
+            },
+            methods: {
+                addContact: function(event) {
+                    event.preventDefault();
+                    if (this.isValidContact()) {
+                        this.contacts.push({
+                            firstName: this.newContact.firstName,
+                            lastName: this.newContact.lastName,
+                            email: this.newContact.email
+                        });
+                        this.resetForm();
+                    }
+                },
+                isValidContact: function() {
+                    return (
+                        this.newContact.firstName.trim() !== '' &&
+                        this.newContact.lastName.trim() !== '' &&
+                        this.newContact.email.trim() !== ''
+                    );
+                },
+                resetForm: function() {
+                    this.newContact.firstName = '';
+                    this.newContact.lastName = '';
+                    this.newContact.email = '';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

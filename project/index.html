@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/f1f16614cc.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 
 <body>
@@ -127,7 +129,7 @@
             <div class="counter__item__text">Happy CUstomers</div>
         </div>
     </div>
-    <div class="blog">
+    <div id='app1' class="blog">
         <div class="blog__title">
             <div class="blog__title__caption">Articles & News</div>
             <div class="blog__title__text">
@@ -135,57 +137,18 @@
             </div>
         </div>
         <div class="blog__box">
-            <div class="test">
-                <div class="blog__box__item ">
-                    <div class="blog__container">
-                        <div class="blog__box__item__img">
-                            <img class='blog__box__item__img__1' src="./img/blog1.png" alt="Interior">
-
-                            <div class="blog__box__item__img__note">
-                                <p class="blog__box__item__img__note__text">Kitchan Design</p>
-                            </div>
-                        </div>
-                        <div class="blog__box__item__title">Let’s Get Solution For Building Construction Work</div>
-                        <div class="blog__box__item__description">
-                            <div class="blog__box__item__text">26 December,2022</div>
-                            <div class="blog__box__item__button">
-                                <i class="fa-solid fa-chevron-right blog__box__item__button__arrow"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="test">
+            <div v-for='article in articles' class="test">
                 <div class="blog__box__item">
                     <div class="blog__container">
-                        <div class="blog__box__item__img"><img class='blog__box__item__img__1' src="./img/blog2.png" alt="Interior">
+                        <div class="blog__box__item__img"><img class='blog__box__item__img__1' :src="article.img" alt="Interior">
                             <div class="blog__box__item__img__note">
-                                <p class="blog__box__item__img__note__text">Living Design</p>
+                                <p class="blog__box__item__img__note__text">{{article.textBox}}</p>
                             </div>
                         </div>
-                        <div class="blog__box__item__title">Low Cost Latest Invented Interior Designing Ideas.
+                        <div class="blog__box__item__title">{{article.title}}
                         </div>
                         <div class="blog__box__item__description">
-                            <div class="blog__box__item__text">26 December,2022</div>
-                            <div class="blog__box__item__button">
-                                <i class="fa-solid fa-chevron-right blog__box__item__button__arrow"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="test">
-                <div class="blog__box__item">
-                    <div class="blog__container">
-                        <div class="blog__box__item__img"><img class='blog__box__item__img__1' src="./img/blog3.png" alt="Interior">
-                            <div class="blog__box__item__img__note">
-                                <p class="blog__box__item__img__note__text">Interior Design</p>
-                            </div>
-                        </div>
-                        <div class="blog__box__item__title">Best For Any Office & Business Interior Solution
-                        </div>
-                        <div class="blog__box__item__description">
-                            <div class="blog__box__item__text">26 December,2022</div>
+                            <div class="blog__box__item__text">{{article.datePublic}}</div>
                             <div class="blog__box__item__button">
                                 <i class="fa-solid fa-chevron-right blog__box__item__button__arrow"></i>
                             </div>
