@@ -74,7 +74,7 @@
             <div v-for='article in articles' class="test">
                 <div class="blog__box__item">
                     <div class="blog__container">
-                        <div class="blog__box__item__img"><img class='blog__box__item__img__1 ' :src="article.img" alt="Interior">
+                        <div class="blog__box__item__img"><img class='blog__box__item__img__1' :src="article.img" alt="Interior" :style="article.geeks">
                             <div class="blog__box__item__img__note">
                                 <p class="blog__box__item__img__note__text">{{article.textBox}}</p>
                             </div>
