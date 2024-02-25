@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <counter></counter>
+        <list></list>
+
+        <list-filter>
+        </list-filter>
+    </div>
+    <div id="app2">
+        <product>
+        </product>
+    </div>
+    <script>
+        Vue.component('counter', {
+            template: `<div>
+        <button @click="increment">+</button>
+        <p>{{counter}}</p>
+        <button @click="decrement">-</button>
+    </div>`,
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                increment() {
+                    this.counter++
+                },
+                decrement() {
+                    this.counter--
+                }
+            }
+        });
+
+        Vue.component('list', {
+            template: `<div>
+            <input type="text" v-model="newItem" placeholder="Добавить элемент">
+            <button @click="addEl">Добавить</button>
+            <ul>
+                <li v-for="item in items" :key="item.id">{{item.name}}
+                    <button @click="deleteEl(item.id)">Удалить</button>
+                </li>
+            </ul>
+        </div>`,
+            data() {
+                return {
+                    newItem: '',
+                    items: []
+                };
+            },
+            methods: {
+                addEl() {
+                    if (this.newItem) {
+                        const newItem = {
+                            id: Date.now(),
+                            name: this.newItem
+                        };
+                        this.items.push(newItem);
+                        this.newItem = '';
+                    }
+                },
+                deleteEl(itemId) {
+                    this.items = this.items.filter(item => item.id !== itemId);
+                }
+
+            }
+        });
+        Vue.component('list-filter', {
+            template: `
+    <div>
+    <input type="text" v-model="filterText" placeholder="Фильтр">
+    <ul>
+      <li v-for="item in filteredList" :key="item.id">{{ item.name }}</li>
+    </ul>
+  </div>
+  `,
+            data() {
+                return {
+                    filterText: '',
+                    items: [{
+                        id: 1,
+                        name: 'list 1'
+                    }, {
+                        id: 2,
+                        name: 'list 2'
+                    }, {
+                        id: 3,
+                        name: 'list 3'
+                    }]
+                };
+            },
+            computed: {
+                filteredList() {
+                    return this.items.filter(item => item.name.toLowerCase().includes(this.filterText));
+                }
+            }
+        });
+        Vue.component('product', {
+            props: ['product'],
+            template: `
+          <div>
+            <img :src="product.image" :alt="product.name" width="100">
+            <h3>{{ product.name }}</h3>
+            <p>Цена: {{ product.price }}</p>
+          </div>
+        `
+        });
+        new Vue({
+            el: '#app2',
+            data: {
+                products: [{
+                    id: 1,
+                    name: 'Товар 1',
+                    image: 'product1.jpg',
+                    price: 100
+                }, {
+                    id: 2,
+                    name: 'Товар 2',
+                    image: 'product2.jpg',
+                    price: 50
+                }, {
+                    id: 3,
+                    name: 'Товар 3',
+                    image: 'product3.jpg',
+                    price: 200
+                }, ]
+            },
+            computed: {
+                sortedProducts() {
+                    return this.products.slice().sort((a, b) => a.price + b.price);
+                }
+            },
+            methods: {
+                sortByPrice(ascending) {
+                    if (ascending) {
+                        this.products.sort((a, b) => a.price - b.price);
+                    } else {
+                        this.products.sort((a, b) => b.price - a.price);
+                    }
+                }
+            }
+        });
+        const app = new Vue({
+            el: '#app'
+
+        })
+    </script>
+</body>
+
+</html>

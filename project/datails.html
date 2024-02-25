@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://kit.fontawesome.com/f1f16614cc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__logo">
+            <div class="header__logo__1">
+                <img src="./img/Logo.png" alt="Logo" class="header__logo__1__img">
+            </div>
+            <div class="header__logo__2">
+                <p class="header__logo__2__text">Interno</p>
+            </div>
+        </div>
+        <div class="header__link">
+            <div class="header__link__item">
+                <a class="header__link__item__color" href="#">Home</a>
+            </div>
+            <div class="header__link__item ">
+                <a class="header__link__item__color" href="# ">Project</a>
+            </div>
+            <div class="header__link__item ">
+                <a class="header__link__item__color" href="# ">Blog</a>
+            </div>
+        </div>
+    </div>
+    <div class="laceholder">
+        <img src="./img/datailsBack.jpeg" alt="Room" class="laceholder__img">
+    </div>
+    <div id='app1'>
+        <div class="blog">
+            <div class="state">
+                <div class="state__title">
+                    <h3 class="state__title__text">Let’s Get Solution for Building Construction Work</h3>
+                </div>
+                <div class="state__img"><img src="./img/datailsPic1.png" alt="Interior" class="state__img__pic">
+                </div>
+                <div class="state__description">
+                    <div class="state__description__text">26 December, 2022</div>
+                    <div class="state__description__link">
+                        <a href="#" class="state__description__link__item">Interior /</a>
+                        <a href="#" class="state__description__link__item">Home /</a>
+                        <a href="#" class="state__description__link__item">Decore</a>
+                    </div>
+                </div>
+                <div class="state__text">
+                    <p class="state__text__content">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by
+                        injecthumour,or randomised words which don't look even slightly believable. Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
+                </div>
+            </div>
+            <div class="tags">
+                <div class="tags__title">
+                    <h3 class="tags__title__text">Tags</h3>
+                </div>
+                <div class="tags__container">
+
+                    <button @click="$refs.currentStates.getFilter($event)" class="tags__container__item">Kitchen</button>
+
+
+                    <button @click="$refs.currentStates.getFilter($event)" class="tags__container__item">Bedroom</button>
+
+                    <button @click="$refs.currentStates.getFilter($event)" class="tags__container__item">Building</button>
+
+                    <button @click="$refs.currentStates.getFilter($event)" class="tags__container__item ">Architecture</button>
+
+                    <button @click="$refs.currentStates.getFilter($event)" class="tags__container__item ">Kitchen Planning
+                        </button>
+
+                    <button @click="$refs.currentStates.getFilter($event)" class="tags__container__item">Bedroom</button>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="state2 ">
+            <div class="state2__note ">
+                <div class="state2__note__container ">
+                    <div class="state2__note__box ">
+                        <div class="state2__note__box__img ">
+                            <img src="./img/datailsQuotes.png " alt="Quotes " class="state2__note__box__img__pic ">
+                        </div>
+                        <div class="state2__note__box__text ">
+                            <p class="state2__note__box__text__content ">The details are not the details. They make the design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="state2__box ">
+                <div class="state2__box__title ">Design sprints are great</div>
+                <div class="state2__box__content ">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</div>
+                <ol class="state2__box__list ">
+                    <li>Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                    <li>Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                    <li>Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                </ol>
+                <div class="state2__box__img ">
+                    <img class="state2__box__img__pic " src=" ./img/datailsPic2.png " alt=" "></div>
+                <div class="state2__box__content ">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</div>
+            </div>
+        </div>
+
+        <div class="current__state ">
+            <current ref="currentStates">
+            </current>
+            <div class="box">
+                <div v-for='state in states ' :key='state.id ' class="current__state__item ">
+
+                    <div class="current__state__item__title ">{{state.title}}</div>
+                    <div class="current__state__item__tag ">{{state.tag}}</div>
+                    <div class="current__state__item__description ">
+                        <div class="current__state__item__description__date ">{{state.dateState}}
+                        </div>
+                        <a href="# ">
+                            <div class="current__state__item__description__button "><i class="fa-solid fa-chevron-right current__state__item__description__button__arrow "></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer ">
+        <div class="feedback ">
+            <div class="feedback__logo ">
+                <div class="feedback__logo__img "><img src="./img/Logo.png " alt="Logo " class="feedback__logo__img__1 "></div>
+                <div class="feedback__logo__text ">Interno</div>
+            </div>
+            <div class="feedback__text ">It is a long established fact that a reader will be distracted lookings.
+            </div>
+            <div class="feedback__network ">
+                <div class="feedback__network__twiter ">
+                    <a href="# " class="feedback__network__twiter__link ">
+                        <i class="fa-brands fa-twitter "></i></a>
+                </div>
+                <div class="feedback__network__linked ">
+                    <a href="# " class="feedback__network__linked__link ">
+                        <i class="fa-brands fa-linkedin-in "></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="pages ">
+            <div class="pages__title ">Pages</div>
+            <div class="pages__item ">
+                <a href="# " class="pages__item__link ">Home</a>
+            </div>
+            <div class="pages__item ">
+                <a href="# " class="pages__item__link ">Project</a>
+            </div>
+            <div class="pages__item ">
+                <a href="# " class="pages__item__link ">Blog</a>
+            </div>
+        </div>
+        <div class="contacts ">
+            <div class="contacts__title ">Contact</div>
+            <div class="contacts__adress ">55 East Birchwood Ave. Brooklyn, New York 11201</div>
+            <div class="contacts__mail ">contact@interno.com</div>
+            <div class="contacts__tel ">(123)456 7890</div>
+        </div>
+
+    </footer>
+    <script src="datails.js ">
+    </script>
+</body>
+
+</html>
