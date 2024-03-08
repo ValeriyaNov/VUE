@@ -1,29 +1,34 @@
 <template>
   <div id="app">
-    <HeaderComponent/>
-    <BannerIndexComponent/>
+    <ProjectPage/>
+    <!-- <HeaderComponent/>
+    <ProjectBannerComponent/> -->
+    <!-- <BannerIndexComponent/>
     <ArticleComponent/>
-    <DatailsComponent/>
-    <FooterComponent/>
+    <DatailsComponent/> -->
+    <!-- <FooterComponent/> -->
     </div>
   
 </template>
 
 <script>
-import HeaderComponent from './components/HeaderComponent.vue';
-import BannerIndexComponent from './components/BannerIndexComponent.vue';
-import FooterComponent from './components/FooterComponent.vue';
-import ArticleComponent from './components/ArticleComponent.vue';
-import DatailsComponent from './components/DatailsComponent.vue';
+import ProjectPage from './components/ProjectPage.vue';
+// import BannerIndexComponent from './components/BannerIndexComponent.vue';
+// import ArticleComponent from './components/ArticleComponent.vue';
+// import DatailsComponent from './components/DatailsComponent.vue';
+//import FooterComponent from './components/FooterComponent.vue';
+//import ProjectBannerComponent from './components/ProjectBannerComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    HeaderComponent,
-    BannerIndexComponent,
-    ArticleComponent,
-    DatailsComponent,
-    FooterComponent
+    ProjectPage
+    //HeaderComponent,
+    //ProjectBannerComponent,
+    // BannerIndexComponent,
+    // ArticleComponent,
+    // DatailsComponent,
+    //FooterComponent
 },
 data() {
     return{
@@ -33,6 +38,7 @@ data() {
         title: 'Let’s Get Solution For Building Construction Work',
         textBox: 'Kitchan Design',
         datePublic: '26 December,2022',
+        geeksParent:{},
         geeks: {
             width: '622px',
             height: '415.08px',
@@ -129,7 +135,8 @@ data() {
             height: '630px',
             margin: '-138px -281px -202px -480px'
         }
-    }] ,
+    }] 
+    
 
 }
 }}
