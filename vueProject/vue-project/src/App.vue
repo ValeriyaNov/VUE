@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <ProjectPage/>
+    <LastPage/>   
+    <!-- <IndexPage/> -->
+    <!-- <ProjectPage/> -->
     <!-- <HeaderComponent/>
     <ProjectBannerComponent/> -->
     <!-- <BannerIndexComponent/>
@@ -12,7 +14,9 @@
 </template>
 
 <script>
-import ProjectPage from './components/ProjectPage.vue';
+import LastPage from './components/LastPage.vue' //к домашке 7
+// import IndexPage from './components/IndexPage.vue';
+//import ProjectPage from './components/ProjectPage.vue';
 // import BannerIndexComponent from './components/BannerIndexComponent.vue';
 // import ArticleComponent from './components/ArticleComponent.vue';
 // import DatailsComponent from './components/DatailsComponent.vue';
@@ -22,7 +26,9 @@ import ProjectPage from './components/ProjectPage.vue';
 export default {
   name: 'App',
   components: {
-    ProjectPage
+    LastPage // к домашке 7
+    //IndexPage
+    //ProjectPage
     //HeaderComponent,
     //ProjectBannerComponent,
     // BannerIndexComponent,
