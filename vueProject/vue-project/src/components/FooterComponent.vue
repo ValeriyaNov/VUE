@@ -22,13 +22,13 @@
         <div class="pages">
             <div class="pages__title">Pages</div>
             <div class="pages__item">
-                <a href="#" class="pages__item__link">Home</a>
+                <router-link to='/home' class="pages__item__link">Home</router-link>
             </div>
             <div class="pages__item">
-                <a href="#" class="pages__item__link">Project</a>
+                <router-link to='/project' class="pages__item__link">Project</router-link>
             </div>
             <div class="pages__item">
-                <a href="#" class="pages__item__link">Blog</a>
+                <router-link to='/blog' class="pages__item__link">Blog</router-link>
             </div>
         </div>
         <div class="contacts">

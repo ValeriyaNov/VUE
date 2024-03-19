@@ -19,9 +19,7 @@
 </template>
 <script>
 export default {
-  name: 'IndexUnderHeaderComponent',
-
-
+  name: 'IndexUnderHeaderComponent'
 }
 </script>
 <style lang="scss">

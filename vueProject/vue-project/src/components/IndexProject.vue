@@ -28,13 +28,10 @@ export default {
             title:'Modern Kitchen',
             text:'Decor / Artchitecture',
             starCheck:false,
-            geeksParent:{
-            'border-radius': '0 80px 0 0'
-            
-        },
             geeks: {
-            width: '616px',
-            height: '548px',
+            width: '548px',
+            height: '525px',
+            'border-radius': '0 80px 0 0'
                     }
             },
             {id:2,
@@ -42,11 +39,10 @@ export default {
             title:'Modern Kitchen',
             text:'Decor / Artchitecture',
             starCheck:false,
-            geeksParent:{
-            'border-radius': '80px 0 0 0'},
             geeks: {
-            width: '616px',
-            height: '548px',
+            width: '548px',
+            height: '525px',
+            'border-radius': '80px 0 0 0'
                     }
             },
             {id:3,
@@ -54,11 +50,10 @@ export default {
             title:'Modern Kitchen',
             text:'Decor / Artchitecture',
             starCheck:false,
-            geeksParent:{
-            'border-radius': '0 0 80px 0'},
             geeks: {
-            width: '619px',
-            height: '548px',
+            width: '548px',
+            height: '525px',
+            'border-radius': '0 0 80px 0'
                     }
             },
             {id:4,
@@ -66,11 +61,10 @@ export default {
             title:'Modern Kitchen',
             text:'Decor / Artchitecture',
             starCheck:false,
-            geeksParent:{
-            'border-radius': '0 0 0 80px'},
             geeks: {
-            width: '619px',
-            height: '548px',
+            width: '548px',
+            height: '525px',
+            'border-radius': '0 0 0 80px'
                     }
             },
     
@@ -96,21 +90,24 @@ $whidthScrin:1140px;
     block-size: border-box;
     text-decoration: none;
 }
-  .project{
+  .index__project{
     margin-left: calc(50% - $whidthScrin/2 - 30px);
     margin-right: calc(50% - $whidthScrin/2 - 30px);
+    display: grid;
+    grid-template-columns: repeat(2 , 2fr);
     //width: 1200px;
     //margin-inline: auto;
-    column-count: 2;
-    gap:35px;
+    //column-count: 2;
+    //gap:35px;
     margin-top:61px; 
     margin-bottom: 61px;
-    //gap: 35px;
+    gap: 74px;
     //height: 3200px;
 
 
     }
     .project__div{
         margin-bottom: 35px;
+        width: 548px;
     }
   </style>

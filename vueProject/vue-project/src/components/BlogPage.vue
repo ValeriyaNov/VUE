@@ -1,34 +1,33 @@
 
 <template>
     <div>
+        
         <UnderHeaderComponent :underFooter="underFooter"/>
-        <ProjectBannerComponent/>
-        <PaginationComponent/>
+        <BlogLatestPost/>
+        <BlogBannerComponent/>
         <FooterComponent/>
     </div>
 </template>
 <script>
-
-import ProjectBannerComponent from './ProjectBannerComponent.vue';
 import UnderHeaderComponent from './UnderHeaderComponent.vue';
-import PaginationComponent from './PaginationComponent.vue'
+import BlogLatestPost from './BlogLatestPost.vue';
+import BlogBannerComponent from './BlogBannerComponent.vue';
 import FooterComponent from './FooterComponent.vue';
 export default {
     components: {
-        
-        ProjectBannerComponent,
+        FooterComponent,
+        BlogLatestPost,
         UnderHeaderComponent,
-        PaginationComponent,
-        FooterComponent
+        BlogBannerComponent
   },
     name: 'ProjectPage',
     data() {
         return {
             underFooter:{
-                backGroundImg: require('@/assets/img/ProjectBack.png'),
+                backGroundImg: require('@/assets/img/BackBlog.png'),
                 checkBlock:{'display': 'blockk'},
-                textTitle:'Our Project',
-                textLink:'Project'//добавить ссылку
+                textTitle:'Articles & News',
+                textLink:'Blog'//добавить ссылку
             },
         };
     },

@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <HeaderComponent/>
-    <router-view/>
-    //<FooterComponent/>
-    </div>
-  
+  <div>
+    <div class="post">Latest Post</div>
+    <div class="blog">
+            <div v-for="article in articles" :key="article.id" class="guidance">
+              <ArticleBoxComponent :article="article"/>
+            </div>  
+    </div> 
+    <PaginationComponent/>
+  </div>
 </template>
 
 <script>
-//import FooterComponent from './components/FooterComponent.vue';
-import HeaderComponent from '@/components/HeaderComponent.vue'
-//import router from './router';
-
+import ArticleBoxComponent from '@/components/ArticleBoxComponent.vue'
+import PaginationComponent from './PaginationComponent.vue';
 export default {
-  name: 'App',
-  components: {
-    HeaderComponent,
-    //FooterComponent
-},
-created() {
-    //this.$router.push({name: 'home'})
+  name: 'BlogBannerComponent',
+  components:{
+    ArticleBoxComponent,
+    PaginationComponent
   },
-data() {
-    return{
+
+  data() {
+    return {
         articles: [{
         id: '1',
         img: require('@/assets/img/blog1.png'),
@@ -91,55 +90,51 @@ data() {
             height: '412px',
             margin: '-82px -111px -40px -325px'
         }
-    }],
-        articles2: [{
-        id: '1',
-        img: require('@/assets/img/blog1.png'),
-        title: 'Let’s Get Solution For Building Construction Work',
-        textBox: 'Kitchan Design',
-        datePublic: '26 December,2022',
-        geeks: {
-            width: '622.62px',
-            height: '415.08px',
-            margin: '-61.5px -119.19px -64.31px -350px'
-        }
+    }]
+    };
+  },
 
-    }, {
-        id: '2',
-        img: require('@/assets/img/blog2.png'),
-        title: 'Low Cost Latest Invented Interior Designing Ideas.',
-        textBox: 'Living Design',
-        datePublic: '26 December,2022',
-        geeks: {
-            width: '580px',
-            height: '386px',
-            margin: '-48px -119px -48px -300px'
-        }
-    }, {
-        id: '3',
-        img: require('@/assets/img/blog3.png'),
-        title: 'Best For Any Office & Business Interior Solution',
-        textBox: 'Interior Design',
-        datePublic: '26 December,2022',
-        geeks: {
-            width: '945px',
-            height: '630px',
-            margin: '-138px -281px -202px -480px'
-        }
-    }] 
+  mounted() {
     
+  },
 
-}
-}}
+  methods: {
+    
+  },
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+$whidthScrin:1140px;
+.post {
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 2%;
+    text-align: left;
+    margin-top: 200px;
+    margin-bottom: 27px;
+    
+}
+.guidance {
+    background-color: white;
+}
+
+.guidance :hover .blog__box__item{
+    background-color: rgb(244, 240, 236);
+}
+
+.guidance :hover .blog__box__item__button {
+    background-color: white;
+}
+.blog{
+  margin-bottom: 96px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: calc(50% - $whidthScrin/2 - 30px);
+        margin-right: calc(50% - $whidthScrin/2 - 30px);
 }
 </style>

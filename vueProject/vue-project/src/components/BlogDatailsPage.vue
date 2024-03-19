@@ -1,32 +1,33 @@
+
 <template>
     <div>
-        <HeaderComponent/>
+        
         <UnderHeaderComponent :underFooter="underFooter"/>
-        <SliderComponent/>
+        <DatailsComponent/>
         <FooterComponent/>
+        
     </div>
 </template>
 <script>
-
-import FooterComponent from './FooterComponent.vue';
-import SliderComponent from './SliderComponent.vue';
 import UnderHeaderComponent from './UnderHeaderComponent.vue';
 
+import DatailsComponent from './DatailsComponent.vue';
+import FooterComponent from './FooterComponent.vue';
 export default {
     components: {
-       FooterComponent,
-        SliderComponent,
-        UnderHeaderComponent,
         
+        FooterComponent,
+        UnderHeaderComponent,
+        DatailsComponent
   },
     name: 'ProjectPage',
     data() {
         return {
             underFooter:{
-                backGroundImg: require('@/assets/img/BackLast.jpg'),
+                backGroundImg: require('@/assets/img/BackBlogDatails.jpg'),
                 checkBlock:{'display': 'none'},
-                textTitle:'Our Project',
-                textLink:'Project'//добавить ссылку
+                textTitle:'Articles & News',
+                textLink:'Blog'//добавить ссылку
             },
         };
     },

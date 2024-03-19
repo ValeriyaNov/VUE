@@ -10,13 +10,14 @@
         </div>
         <div class="header__link">
             <div class="header__link__item">
-                <a class="header__link__item__color" href="#">Home</a>
+                <router-link to='/home' class="header__link__item__color">Home</router-link>
+                
             </div>
             <div class="header__link__item ">
-                <a class="header__link__item__color" href="# ">Project</a>
+                <router-link to='/project' class="header__link__item__color">Project</router-link>
             </div>
             <div class="header__link__item ">
-                <a class="header__link__item__color" href="# ">Blog</a>
+                <router-link to='/blog' class="header__link__item__color">Blog</router-link>
             </div>
         </div>
     </div>

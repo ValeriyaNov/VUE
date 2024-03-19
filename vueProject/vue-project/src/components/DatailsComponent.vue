@@ -1,8 +1,5 @@
 <template>
-    <div >
-        <div class="laceholder">
-        <img src="@/assets/img/datailsBack.jpeg" alt="Room" class="laceholder__img">
-    </div>
+    
     <div >
         <div class="blog1">
             <div class="state">
@@ -98,11 +95,11 @@
         </div>
     </div>
 
-        </div>
+       
     </template>
     <script>
     export default {
-      name: 'HeaderComponent',
+      name: 'DatailsComponent',
       data() {
             return {
                 filter: [],
@@ -165,18 +162,7 @@
         block-size: border-box;
         text-decoration: none;
     }
-    
-    .laceholder {
-    height: 351px;
-    
-    overflow: hidden;
-    margin-bottom: 200px;
-    &__img {
-        width: 2248px;
-        height: 1500px;
-        margin: -590px 1755px 872px -164px;
-    }
-}
+
 
 .tags {
     margin-right: calc(50% - $whidthScrin/2 - 30px);
@@ -305,6 +291,8 @@
     justify-content: start;
     margin-right: calc(50% - $whidthScrin/2 - 30px);
     margin-left: calc(50% - $whidthScrin/2 - 30px);
+    margin-top: 200px;
+    margin-bottom: 96px;
 }
 
 .state2 {
@@ -418,6 +406,7 @@
 .current__state {
     margin-right: calc(50% - $whidthScrin/2 - 30px);
     margin-left: calc(50% - $whidthScrin/2 - 30px);
+    margin-bottom: 96px;
     &__item {
         border: 1px solid transparent;
         border-radius: 50px;

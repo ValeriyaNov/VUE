@@ -2,7 +2,7 @@
     <div class="project__box__item">
     <div class="project__box__item__star" :style="{'display':`${checkStars}`}">
         <img src="@/assets/img/Star.png" alt="Star" class="project__box__item__star__1"></div>
-    <div class="project__box__item__img" :style="project.geeksParent"><img class='project__box__item__img__img1' :src="project.img" alt="Kithen" :style="project.geeks"></div>
+    <div class="project__box__item__img" ><img class='project__box__item__img__img1' :src="project.img" alt="Kithen" :style="project.geeks"></div>
     <div class="project__box__item__description">
         <div class="project__box__item__description__content">
             <h3 class="project__box__item__description__content__title">
@@ -37,6 +37,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+*{
+    margin:0px;
+    padding:0px;
+}
 .project__box {
 
         &__item {
@@ -54,19 +58,22 @@ export default {
             &__img {
             
                 border: 1px solid transparent; //надо добавить в данные проекта радиус
-                //border-radius: 0 80px 0 0;
+                
                 max-width: 600px;
                 max-height: 900px;
                 &__img1 {
-                  
+                  //border-radius: 0 80px 0 0;
                 }
             }
             &__description {
-                width: 585px;
+                max-width: 585px;
+                height: 70px;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 margin-top: 24px;
                 &__content {
+                    //max-height: 60px;
                     &__title {
                         color: rgb(41, 47, 54);
                         font-family: DM Serif Display;
