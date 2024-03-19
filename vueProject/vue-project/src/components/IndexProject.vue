@@ -17,7 +17,7 @@ export default {
         ProjectDescriptionComponent
   },
     name: 'IndexProject',
-    //props: ['project'],
+    
   data() {
     return {
         
@@ -95,14 +95,11 @@ $whidthScrin:1140px;
     margin-right: calc(50% - $whidthScrin/2 - 30px);
     display: grid;
     grid-template-columns: repeat(2 , 2fr);
-    //width: 1200px;
-    //margin-inline: auto;
-    //column-count: 2;
-    //gap:35px;
+   
     margin-top:61px; 
     margin-bottom: 61px;
     gap: 74px;
-    //height: 3200px;
+    
 
 
     }

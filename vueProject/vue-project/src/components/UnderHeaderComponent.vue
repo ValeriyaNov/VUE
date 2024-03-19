@@ -27,17 +27,17 @@ export default {
 </script>
 <style lang="scss">
 .new {
-    lbackground: url('@/assets/img/ProjectBack.png');
+    
     background-repeat: no-repeat;
     background-size: cover;
-    //background-position: 0px -485px;
+    
     width: 100%;
     height: 356px;
     display: flex;
     justify-content: center;
     align-items: end;
     height: 356px;
-    hdisplay: block;
+    
 }
 .news {
     border: 1px solid transparent;
@@ -63,9 +63,7 @@ export default {
         letter-spacing: 0%;
         text-align: center;
         &_cont {
-            kdisplay: flex;
-            ljustify-content: center;
-            lalign-items: center;
+            
         }
     }
     &__link {

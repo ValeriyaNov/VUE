@@ -26,7 +26,7 @@ export default {
                 backGroundImg: require('@/assets/img/BackLast.jpg'),
                 checkBlock:{'display': 'none'},
                 textTitle:'Our Project',
-                textLink:'Project'//добавить ссылку
+                textLink:'Project'
             },
         };
     },

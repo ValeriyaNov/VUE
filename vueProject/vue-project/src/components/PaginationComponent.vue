@@ -1,25 +1,26 @@
 <template>
-   <div class="pagination">
-        <div class="pagination__item">
-            <a href="#" class="pagination__item__text">01</a>
-        </div>
-        <div class="pagination__item">
-            <a href="#" class="pagination__item__text">02</a>
-        </div>
-        <div class="pagination__item">
-            <a href="#" class="pagination__item__text">03</a>
-        </div>
+   <div v-show="showBlok" class="">
+    <div class="pagination">
+    <router-link class="pagination__item" v-for="page in totalPages" :key="`p${page}`" :to="`/${site}/${page}`">
+          <p class="count__page-number-text">{{ page }}</p>
+        </router-link>
+        
         <button class="pagination__button">
             <img src="@/assets/img/Vector.png" class="pagination__button__arrow"
             alt="Arrow">
             </button>
         </div>
-
+    </div>
+        
 </template>
 <script>
 export default {
   name: 'PaginationComponent',
-  
+  props:['totalPages','quantity', 'visible', 'site'],
+  computed: {
+    showBlok () {
+      return this.visible
+    }}
 
 
 }

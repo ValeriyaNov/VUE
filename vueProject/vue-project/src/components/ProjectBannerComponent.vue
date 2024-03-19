@@ -4,10 +4,14 @@
             <ProjectCatecoriesComponent @activCategories="activCategories" />
         </div>
         <div class="project">
-            <div v-for="project in projects" :key="project.id" class="project__div">
+            <div v-for="project in projectsPage" :key="project.id" class="project__div">
         <ProjectDescriptionComponent :project="project" />
             </div>
+    
+              
+
     </div>
+     <PaginationComponent :totalPages="totalPages" :quantity="quantity" :visible="visible" :site="site"/> 
 </div>
     
 </template>
@@ -15,15 +19,18 @@
 <script>
 import ProjectDescriptionComponent from './ProjectDescriptionComponent.vue';
 import ProjectCatecoriesComponent from './ProjectCatecoriesComponent.vue';
+import PaginationComponent from './PaginationComponent.vue';
 export default {
     components: {
         ProjectDescriptionComponent,
-        ProjectCatecoriesComponent
+        ProjectCatecoriesComponent,
+        PaginationComponent
   },
     name: 'ProjectBannerComponent',
-    //props: ['project'],
+    
   data() {
     return {
+        currentPagesNull:1,
         projects:[],
         TwoCollection:
         [
@@ -114,7 +121,7 @@ export default {
         ],
         OneCollection:[ {id:21,
             img:require('@/assets/img/ProjectCom4.png'),
-            title:'MinimalBedroom',
+            title:'Bathroom',
             text:'Decor / Artchitecture',
             starCheck:true,
             geeks: {
@@ -275,6 +282,9 @@ export default {
                     }
             }
         ],
+        quantity:6,
+        visible:true,
+        site:'project'
     };
   },
   created () {
@@ -283,6 +293,7 @@ export default {
 
   methods: {
     activCategories (data) {
+        this.$router.push('/project');
       switch (data.id) {
         case 1:
           this.projects = this.OneCollection
@@ -297,8 +308,29 @@ export default {
           this.projects = this.FourCollection
           break
       }
+    },
+    currentPages(){
+        this.current=this.$route.params.page ||1
     }
-  }
+  },
+  computed: {
+    showBlok () {
+      return this.visible
+    },
+    totalPages () {
+      return Math.ceil(this.projects.length / this.quantity)
+    },
+    currentPage () {
+      return this.$route.params.page || 1
+    },
+    projectsPage () {
+      const pageNumber = this.currentPage;
+      const startIndex = (pageNumber - 1) * this.quantity;
+      const endIndex = startIndex + this.quantity;
+      return this.projects.slice(startIndex, endIndex)
+    
+    }
+  },
   }
   </script>
   <style lang="scss" scoped>
@@ -314,14 +346,12 @@ $whidthScrin:1140px;
   .project{
     margin-left: calc(50% - $whidthScrin/2 - 30px);
     margin-right: calc(50% - $whidthScrin/2 - 30px);
-    //width: 1200px;
-    //margin-inline: auto;
+    
     column-count: 2;
     gap:35px;
     margin-top:61px; 
     margin-bottom: 61px;
-    //gap: 35px;
-    //height: 3200px;
+    
 
 
     }

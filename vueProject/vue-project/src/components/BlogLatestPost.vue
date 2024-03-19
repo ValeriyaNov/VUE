@@ -71,7 +71,7 @@ $whidthScrin:1140px;
     &__img {
         border: 1px solid transparent;
         width: 1300px;
-        /*не правильно работает*/
+        
         height: 478px;
         border-radius: 50px;
         overflow: hidden;

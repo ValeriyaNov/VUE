@@ -2,11 +2,11 @@
   <div>
     <div class="post">Latest Post</div>
     <div class="blog">
-            <div v-for="article in articles" :key="article.id" class="guidance">
-              <ArticleBoxComponent :article="article"/>
+            <div v-for="article in articlesPage" :key="article.id" class="guidance">
+              <ArticleBoxComponent :article="article" />
             </div>  
     </div> 
-    <PaginationComponent/>
+    <PaginationComponent :totalPages="totalPages" :quantity="quantity" :visible="visible" :site="site"/>
   </div>
 </template>
 
@@ -90,10 +90,52 @@ export default {
             height: '412px',
             margin: '-82px -111px -40px -325px'
         }
-    }]
+    }, {
+        id: '7',
+        img: require('@/assets/img/blog5.png'),
+        title: 'Low Cost Latest Invented Interior Designing Ideas.',
+        textBox: 'Living Design',
+        datePublic: '26 December,2022',
+        geeks: {
+            width: '418px',
+            height: '627px',
+            margin: '-242px -39px -95px -220px'
+        }
+    }, {
+        id: '8',
+        img: require("@/assets/img/blog6.png"),
+        title: 'Best For Any Office & Business Interior Solution',
+        textBox: 'Interior Design',
+        datePublic: '26 December,2022',
+        geeks: {
+            width: '616px',
+            height: '412px',
+            margin: '-82px -111px -40px -325px'
+        }
+    }
+],
+        quantity:6,
+        visible:true,
+        site:'blog'
     };
   },
-
+  computed: {
+    showBlok () {
+      return this.visible
+    },
+    totalPages () {
+      return Math.ceil(this.articles.length / this.quantity)
+    },
+    currentPage () {
+      return this.$route.params.page || 1
+    },
+    articlesPage () {
+      const pageNumber = this.currentPage
+      const startIndex = (pageNumber - 1) * this.quantity
+      const endIndex = startIndex + this.quantity
+      return this.articles.slice(startIndex, endIndex)
+    }
+  },
   mounted() {
     
   },

@@ -2,25 +2,21 @@
   <div id="app">
     <HeaderComponent/>
     <router-view/>
-    //<FooterComponent/>
+    
     </div>
   
 </template>
 
 <script>
-//import FooterComponent from './components/FooterComponent.vue';
+
 import HeaderComponent from '@/components/HeaderComponent.vue'
-//import router from './router';
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-    //FooterComponent
+   
 },
-created() {
-    //this.$router.push({name: 'home'})
-  },
 data() {
     return{
         articles: [{

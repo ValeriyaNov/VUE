@@ -27,7 +27,7 @@ export default {
                 backGroundImg: require('@/assets/img/BackBlog.png'),
                 checkBlock:{'display': 'blockk'},
                 textTitle:'Articles & News',
-                textLink:'Blog'//добавить ссылку
+                textLink:'Blog'
             },
         };
     },

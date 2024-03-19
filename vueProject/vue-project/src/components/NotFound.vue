@@ -33,13 +33,13 @@ $whidthScrin:1140px;
     margin-bottom: 53px;
     margin-top: 53px;
     margin-left: calc(50% - $whidthScrin/2 - 30px);
-    //margin-right: calc(50% - $whidthScrin/2 - 30px);
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .banner__button {
-        //margin-right: 20px;
+       
         width: 253px;
         height: 75px;
         border-radius: 18px;
@@ -61,8 +61,7 @@ $whidthScrin:1140px;
         }
         &__img {
             color: rgb(205, 162, 116);
-            //color:red;
-            //filter:grayscale(100%);
+            
             width: 15.14px;
             height: 13.18px;
         }

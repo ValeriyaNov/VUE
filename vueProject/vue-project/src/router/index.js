@@ -26,6 +26,14 @@ export default new Router({
         }, {
             path: '/project_details',
             component: LastPage
+        }, {
+            path: '/blog/:page',
+            component: () =>
+                import ('@/components/BlogPage.vue')
+        }, {
+            path: '/project/:page',
+            component: () =>
+                import ('@/components/ProjectPage.vue')
         },
         {
             path: '*',

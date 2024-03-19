@@ -95,7 +95,7 @@ export default {
 }
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-// @import url('@/assets/scss-modules/style.scss');
+
 .blog {
     &__title {
         margin-bottom: 52px;
